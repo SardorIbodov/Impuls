@@ -1,0 +1,270 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+header {
+  /* width: 100vw; */
+  min-height: 100vh;
+  overflow: hidden;
+  background-image: url("./images/hero-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+nav {
+  padding: 30px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  column-gap: 30px;
+  list-style: none;
+}
+
+.menu li {
+  position: relative;
+}
+
+.menu li a {
+  color: #fff;
+  font-family: TT Norms;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.menu li:hover a {
+  color: #118bdd;
+}
+
+.menu li:hover svg path {
+  stroke: #118bdd;
+}
+
+.menu li .sub-menu {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  background-color: #0c0e16;
+  list-style: none;
+  padding: 30px;
+  display: none;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+.menu li:hover .sub-menu {
+  display: flex;
+}
+
+.menu li .sub-menu li a {
+  color: white;
+  text-decoration: none;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+.contact a:nth-child(1) {
+  text-decoration: none;
+  color: #fff;
+  font-family: TT Norms;
+  font-weight: 500;
+}
+
+.contact a:nth-child(2) {
+  text-decoration: none;
+  color: #8c94a6;
+  font-family: TT Norms;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.burger-menu {
+  display: none;
+}
+
+.hero {
+  position: relative;
+}
+
+.hero h1 {
+  margin-top: 183px;
+  width: 800px;
+  color: #fff;
+  font-family: TT Norms;
+  font-size: 54px;
+  font-weight: 800;
+  line-height: 150%; /* 81px */
+}
+
+.hero h2 {
+  width: 600px;
+  color: #cfcfcf;
+  font-family: TT Norms;
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 150%; /* 39px */
+}
+
+.hero .navigation {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  position: absolute;
+  right: 70px;
+  top: 50%;
+  transform: translateY(-100%);
+  color: #7b7b7b;
+  font-family: TT Norms;
+  font-weight: 700;
+  line-height: 150%; /* 18px */
+  cursor: pointer;
+  z-index: 2;
+}
+
+.hero .navigation li:hover {
+  color: #118bdd;
+}
+
+.info {
+  margin-top: 200px;
+  margin-bottom: 50px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 20px;
+}
+
+.info .box {
+  display: flex;
+  column-gap: 10px;
+  align-items: flex-start;
+}
+
+.info .box img {
+  margin-top: 5px;
+}
+
+.info .box .data h3 {
+  color: #fff;
+  font-family: TT Norms;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 150%; /* 24px */
+}
+
+.info .box .data p {
+  color: #c9c9c9;
+  font-family: TT Norms;
+  font-size: 16px;
+  line-height: 150%; /* 21px */
+}
+@media screen and (max-width: 600px) {
+  .contact a:nth-child(2) {
+    display: none;
+  }
+
+  .burger-menu {
+    display: block;
+  }
+
+  .menu li .sub-menu {
+    position: static;
+    padding: 15px;
+    margin-top: 10px;
+  }
+
+  nav {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .menu {
+    padding: 80px 15px;
+    position: absolute;
+    right: 0;
+    transform: translateX(100%);
+    top: 0;
+    background-color: #0c0e16;
+    flex-direction: column;
+  }
+
+  .menu > li {
+    width: 100%;
+    padding: 20px 0;
+    border-bottom: 1px solid #2c2f37;
+  }
+
+  .menu::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60px;
+    height: 60px;
+    background-image: url("./images/cancel.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #118bdd;
+  }
+
+  .hero .navigation {
+    display: none;
+  }
+
+  .hero h1 {
+    width: auto;
+    text-align: center;
+    margin-top: 53px;
+    font-size: 30px;
+  }
+
+  .hero h2 {
+    width: auto;
+    margin-top: 20px;
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .info {
+    margin: 50px 0;
+    grid-template-columns: 1fr;
+  }
+
+  .info .box {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .info .box:not(:first-child) {
+    display: none;
+  }
+
+  .info .box .data h3,
+  .info .box .data p {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
